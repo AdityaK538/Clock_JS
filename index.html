@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            position: relative;
+            left: 200px;
+            top: 200px;
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+    <span id="hours">00</span>
+    <span>:</span>
+    <span id="minutes">00</span>
+    <span>:</span>
+    <span id="seconds">00</span>
+    <span id="apm">am/pm</span>
+    
+    <script>
+        function time(){
+        let clock =new Date()
+        let h = clock.getHours()
+        let m = clock.getMinutes()
+        let s = clock.getSeconds()
+        let a = "AM"
+        let p = "PM"
+        
+
+        let hr = document.querySelector('#hours')
+
+         if(h > 12)
+          ht=12-h
+
+        hr.innerHTML = h
+
+        let mn = document.querySelector('#minutes')
+        mn.innerHTML = m
+
+
+        let sc = document.querySelector('#seconds')
+        sc.innerHTML = s
+
+         
+        let tap = document.querySelector('#apm')
+        if(h < 12)
+        tap.innerHTML = a
+        else
+        tap.innerHTML = p
+        }
+
+        setInterval(time,1000)
+    </script>
+</body>
+</html>
